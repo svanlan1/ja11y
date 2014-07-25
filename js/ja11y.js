@@ -1,4 +1,4 @@
-var j = {};
+j = {};
 
 j.init = function () {
 	var j = {};
