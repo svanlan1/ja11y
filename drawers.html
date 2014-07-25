@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>jA11y! - An accessible JavaScript framework - Drawers</title>
+		<script src="js/ja11y.js" type="text/javascript"></script>
+		<script src="js/ja11y.forms.js" type="text/javascript"></script>
+		<script src="js/ja11y.overlay.js" type="text/javascript"></script>
+		<script src="js/ja11y.drawer.js" type="text/javascript"></script>
+		<script src="js/ja11y.tables.js" type="text/javascript"></script>
+		<script src="js/after.js" type="text/javascript"></script>
+		<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/ja11y.css">
+		<link rel="shortcut icon" href="favicon.ico">
+
+	</head>
+	<body onload="j.init();">
+		<header class="header">
+			<h1>jA11y! <span class="headerSubText">An Accessible JavaScript Framework</span></h1>
+		</header>
+		<div class="container" style="margin-top: 2em;">
+			<h2>Drawers!</h2>
+			<div class="drawer" id="drawer1">
+				<div class="drawerHead"></div>
+				<div class="drawerContent">
+					<h3>What have we done to make this accessible?</h3>
+					<ul>
+						<li>These drawers add all of the ARIA attributes in the background</li>
+						<li>You see that little plus/minus text above?  That changes dynamically</li>
+						<li>You don't see it, but offscreen text is already inside of the anchor!  This also changes dynamically</li>
+					</ul>
+				</div>
+			</div>
+			<div class="drawer" id="drawer2">
+				<div class="drawerHead"></div>
+				<div class="drawerContent">
+					<h3>So what does the markup look like?  How much work do YOU need to do?</h3>
+					<hr />
+					<h4>HTML</h4>
+					<code>
+						&lt;div class="drawer" id="drawer2"&gt;<br />
+						&nbsp;&nbsp;&lt;div class="drawerContent"&gt;&lt;/div&gt;<br />
+						&lt;/div&gt;
+					</code>
+					<hr />
+					<h4>JavaScript</h4>
+					<code>
+							j.drawer({
+								'id': 'drawer2',
+								'header': 'Markup'
+							});
+					</code>
+					<hr />
+					<p>
+						See how easy this is?  
+				</div>
+			</div>			
+		</div>
+		<footer class="footer">
+			Want to help contribute?  Just drop me a line!  <a href="mailto:endoflineprod@gmail.com">Endoflineprod@gmail.com</a>
+		</footer>	
+	</body>
+</html>

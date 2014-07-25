@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>jA11y! - An accessible JavaScript framework</title>
+		<script src="js/ja11y.js" type="text/javascript"></script>
+		<script src="js/ja11y.forms.js" type="text/javascript"></script>
+		<script src="js/ja11y.overlay.js" type="text/javascript"></script>
+		<script src="js/ja11y.drawer.js" type="text/javascript"></script>
+		<script src="js/after.js" type="text/javascript"></script>
+		<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/ja11y.css">
+		<link rel="shortcut icon" href="favicon.ico">
+
+	</head>
+	<body onload="j.init();">
+		<header class="header">
+			<h1>jA11y! <span class="headerSubText">An Accessible JavaScript Framework</span></h1>
+		</header>
+		<div class="container">
+			<h2>Forms!</h2>
+			<form id="personalInfo"></form>	
+			<hr />
+			<div class="drawer" id="formDrawer">
+				<div class="drawerHead"></div>
+				<div class="drawerContent">
+					<h3>What's already been done for you?</h3>
+					<ul>
+						<li>Each form element has an explicit label</li>
+						<li>Simply pass in the 'required' parameter and the form sets up all of the error handling for you</li>
+						<li>Radio button/checkbox groups are already marked up in a fieldset with a legend</li>
+						<li>All of the ARIA attributes are set up in the background, so you never have to worry about them!</li>
+					</ul>
+					<hr />
+					<h3>Let's take a look at the HTML</h3>
+					<code>
+						&lt;form id="personalInfo"&gt;&lt;/form&gt;
+					</code>
+					<p>Yep, that's all you need!</p>
+					<hr />
+					<h3>What about the JavaScript?</h3>
+					<p>You don't need to hand write any of the labels, inputs, textareas, etc.  Simply pass in a JSON object with all of your options</p>
+					<code>
+j.form({<br />
+		"id": "personalInfo",<br />
+		"fields": {<br />
+				'fName': {<br />
+					"type": "input",<br />
+					"required": true,<br />
+					"errorText": 'is a required field and cannot be blank',<br />
+					"class": "shadow_inset rounded_corners",<br />
+					"label": "First Name"<br />
+				},<br />
+				'lName': {<br />
+					"type": "input",<br />
+					"required": true,<br />
+					"errorText": 'is a required field and cannot be blank',<br />
+					"class": "shadow_inset rounded_corners",<br />
+					"label": "Last Name"<br />
+				},  <br />                                                          
+				'state': {<br />
+					"type": "select",<br />
+					"required": true,<br />
+					"errorText": 'is required.  Please select a state.',<br />
+					"class": "shadow_inset rounded_corners",<br />
+					"label": "State",<br />
+					"options": [<br />
+						{<br />
+							'value': "",<br />
+							'text': ""<br />
+						},<br />
+						{<br />
+							'value': 'IL',<br />
+							'text': 'Illinois'<br />
+						}, <br />
+						{<br />
+							'value': 'VA',<br />
+							'text': 'Virginia'<br />
+						},<br />
+						{ <br />
+							'value': 'MD',<br />
+							'text': 'Maryland'<br />
+						},<br />
+						{<br />
+							'value': 'DC',<br />
+							'text': 'Washington D.C.'<br />
+						}<br />
+					]<br />
+				},<br />
+				'textarea1': {<br />
+					"type": "textarea",<br />
+					"required": true,<br />
+					"errorText": " is required.  Please add some text in here",<br />
+					"class": "shadow_inset rounded_corners",<br />
+					"label": "Comments"<br />
+				},<br />
+				'group': {<br />
+					"options": [<br />
+						{<br />
+							'type': 'radio',<br />
+							'id': 'check1',<br />
+							'label': 'Yes',<br />
+							"class": "shadow_inset rounded_corners",<br />
+							'name': 'continue',<br />
+						},<br />
+						{<br />
+							'type': 'radio',<br />
+							'id': 'check2',<br />
+							'label': 'No',<br />
+							"class": "shadow_inset rounded_corners",<br />
+							'name': 'continue'<br />
+						}<br />
+					],<br />
+					"legend": "Do you wish to continue?",<br />
+					"required": true<br />
+				},<br />
+				'submit': {<br />
+					'text': 'Submit',<br />
+					'class': 'css3button'<br />
+				},<br />
+				'cancel': {<br />
+					'text': 'Cancel',<br />
+					'class': 'css3button'<br />
+				}   <br />                   
+		}<br />
+
+	});
+</code>						
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			Copyright jA11y! 2014
+		</footer>	
+	</body>
+</html>

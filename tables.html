@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>jA11y! - An accessible JavaScript framework</title>
+		<script src="js/ja11y.js" type="text/javascript"></script>
+		<script src="js/ja11y.forms.js" type="text/javascript"></script>
+		<script src="js/ja11y.overlay.js" type="text/javascript"></script>
+		<script src="js/ja11y.drawer.js" type="text/javascript"></script>
+		<script src="js/ja11y.tables.js" type="text/javascript"></script>
+		<script src="js/after.js" type="text/javascript"></script>
+		<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/ja11y.css">
+		<link rel="shortcut icon" href="favicon.ico">
+
+	</head>
+	<body onload="j.init();">
+		<header class="header">
+			<h1>jA11y! <span class="headerSubText">An Accessible JavaScript Framework</span></h1>
+		</header>
+		<div class="container" style="margin-top: 2em;">
+			<h2>Tables!</h2>
+			<table id="dataTable"></table>
+			<hr />
+			<div class="drawer" id="tablesDrawer">
+				<div class="drawerHead"></div>
+				<div class="drawerContent">
+					<h3>What have we done to make this accessible?</h3>
+					<ul>
+						<li>Table headers are already marked up for you.  All you have to do is pass in the option telling the code that it's a table header.</li>
+						<li>The <code>&lt;caption&gt;</code> element is coded and added automatically.</li>
+						<li>Table sorting is made easy by passing the 'sortable' option</li>
+						<li>All ARIA attributes are added to the table in the JavaScript behind the scenes</li>
+					</ul>
+					<hr />
+					<h3>Let's take a look at the HTML</h3>
+					<code>
+						&lt;table id="dataTable"&gt;&lt;/table&gt;
+					</code>
+					<p>Yep, that's all you need!</p>
+					<hr />
+					<h3>What about the JavaScript?</h3>
+					<code>
+						j.dataTable('dataTable', {<br />
+		'caption': 'Demo data table',<br />
+		'captionShow': true,<br />
+		'columnHeaders': ['Name', 'Address', 'Phone Number', 'City', 'State', 'Zip Code'],<br />
+		'rowData': {<br />
+			'1': ["Shea VanLaningham", "9543 Sundial Court", "(804)873-9778", "Henrico", "Virginia", "23294"],<br />
+			'2': ["Shea VanLaningham", "5421 W. Haymeadow Place", "(804)873-9778", "Peoria", "Illinois", "61615"]<br />
+		}<br />
+	});<br />
+					</code>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			Want to help contribute?  Just drop me a line!  <a href="mailto:endoflineprod@gmail.com">Endoflineprod@gmail.com</a>
+		</footer>	
+	</body>
+</html>

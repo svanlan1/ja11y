@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>jA11y! - An accessible JavaScript framework</title>
+		<script src="js/ja11y.js" type="text/javascript"></script>
+		<script src="js/ja11y.forms.js" type="text/javascript"></script>
+		<script src="js/ja11y.overlay.js" type="text/javascript"></script>
+		<script src="js/ja11y.drawer.js" type="text/javascript"></script>
+		<script src="js/ja11y.tables.js" type="text/javascript"></script>
+		<script src="js/after.js" type="text/javascript"></script>
+		<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/ja11y.css">
+		<link rel="shortcut icon" href="favicon.ico">
+
+	</head>
+	<body onload="startMeth();">
+		<header class="header">
+			<h1>jA11y! <span class="headerSubText">An Accessible JavaScript Framework</span></h1>
+		</header>
+		<div class="container">
+			<h2>Methods</h2>
+			<dl class="selCont rounded_corners">
+				<dt class="sel">j.id(element id)</dt>
+				<dd class="desc">
+					<p>
+						This method returns an element with the id (<strong>string</strong>) that is passed in the method.
+					</p>
+					<p>
+						<code>j.id('first_name');</code>
+					</p>
+				</dd>
+				<dt class="sel">j.class(className)</dt>
+				<dd class="desc">
+					<p>
+						This method returns all elements with the class (<strong>string</strong>) that is passed in the method.
+					</p>
+					<p>
+						<code>j.class('.sel');</code>
+					</p>
+				</dd>	
+
+				<dt class="sel">j.attr(id, attribute, value)</dt>
+				<dd class="desc">
+					<p>
+						This method will return all of the attributes of the element with the id (<strong>string</strong>) passed into the method.  You can also set an attribute by passing in the attribute name (<strong>string</strong>), followed by the value (<strong>string</strong>).
+					</p>
+					<p>
+						<code>j.attr('first_name', 'aria-required', 'true');</code>
+					</p>
+				</dd>
+
+				<dt class="sel">j.removeAttr(id, attr)</dt>
+				<dd class="desc">
+					<p>
+						This method will remove the attribute (<strong>string</strong>) on the id (<strong>string</strong>) that is passed into the method
+					</p>
+					<p>
+						<code>j.removeAttr('first_name', 'aria-required');</code>
+					</p>
+				</dd>
+
+				<dt class="sel">j.create(type, attributes)</dt>
+				<dd class="desc">
+					<p>
+						This method will create an element with all of the attributes passed in.  
+					</p>
+					<p>
+						<code>j.create('input', '{'type': 'text', 'id': 'last_name', 'aria-required', 'true'}');</code>
+					</p>
+				</dd>
+
+				<dt class="sel">j.prev(id)</dt>
+				<dd class="desc">
+					<p>
+						This method will find the previous element from the id (<strong>string</strong>) passed in.
+					</p>
+					<p>
+						<code>j.prev('first_named');</code>
+					</p>
+				</dd>								
+			</dl>
+		</div>		
+		<footer class="footer">
+			Want to help contribute?  Just drop me a line!  <a href="mailto:endoflineprod@gmail.com">Endoflineprod@gmail.com</a>
+		</footer>	
+	</body>
+</html>

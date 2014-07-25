@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>jA11y! - An accessible JavaScript framework</title>
+		<script src="js/ja11y.js" type="text/javascript"></script>
+		<script src="js/ja11y.forms.js" type="text/javascript"></script>
+		<script src="js/ja11y.overlay.js" type="text/javascript"></script>
+		<script src="js/ja11y.drawer.js" type="text/javascript"></script>
+		<script src="js/ja11y.tables.js" type="text/javascript"></script>
+		<script src="js/after.js" type="text/javascript"></script>
+		<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/ja11y.css">
+		<link rel="shortcut icon" href="favicon.ico">
+
+	</head>
+	<body onload="start();">
+		<header class="header">
+			<h1>jA11y! <span class="headerSubText">An Accessible JavaScript Framework</span></h1>
+		</header>
+		<div class="container">
+			<h2><a href="forms.html">Forms</a></h2>
+			<button type="button" id="downloadBtn" name="" value="" class="css3button">This ain't ready yet!</button>
+			<form id="personalInfo"></form>	
+		</div>
+
+		<div class="container" style="margin-top: 2em;">
+			<h2>Modal windows!</h2>
+			<a onclick="showModalWindow();">Show Modal Window</a>
+			<h3>So what's so great about this?</h3>
+			<ul>
+				<li>The modal container has <code>role=dialog</code> already appended to it</li>
+				<li>This uses <code>aria-labelledby</code> to give the entire dialog a label.  This ensures AT read out</li>
+				<li>Pressing escape closes the dialog.  Not that I recommend it, but this can easily be turned off (but don't do it.  Seriously.  I'll find you.)</li>
+				<li>Focus is trapped inside of the dialog by default, ensuring that non-sighted users won't accidentally move behind the dialog</li>
+				<li>Off-screen text has been added at the beginning and at the end of the dialog container</li>
+				<li>The content behind the dialog has <code>aria-hidden=true</code></li>
+				<li><code>aria-hidden=true</code> is set when the dialog is not displayed, and <code>aria-hidden=false</code> when it shows up to the party</li>
+			</ul>
+			<div id="overlay" class="overlay">
+				<div>
+					<span style="margin-left: 460px; text-align:right;">
+						<a href="#" id="closeBtn">Close</a>
+					</span>
+					<h2 id="head1">Check out these overlays baby!</h2>
+					<a href="javascript: void(0);" id="firstAnchor">Check me out, sasquatch!</a>
+					<p>
+						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, 
+					</p>
+					<p>
+						So look y'all.  You can do whatever you want to these modal windows.  Grill em', mash em', stick em' in a stew.  Style them to look however you want.  They're all ready to go and accessible out of the box!
+					</p>
+					<span id="lastAnchor">This is a text node.  By default, it is not in the taborder.  However, since whoever designed this (me) screwed up and made this a span element, the code went ahead and added a tabindex so it doesn't get all screwed up!</span>
+					
+				</div>
+			</div>
+		</div>
+		<div class="container" style="margin-top: 2em;">
+			<h2>Drawers!</h2>
+			<div class="drawer" id="drawer1">
+				<div class="drawerHead"></div>
+				<div class="drawerContent">
+					<h3>What have we done to make this accessible?</h3>
+					<ul>
+						<li>These drawers add all of the ARIA attributes in the background</li>
+						<li>You see that little plus/minus text above?  That changes dynamically</li>
+						<li>You don't see it, but offscreen text is already inside of the anchor!  This also changes dynamically</li>
+					</ul>
+				</div>
+			</div>
+			<div class="drawer" id="drawer2">
+				<div class="drawerHead"></div>
+				<div class="drawerContent">
+					<h3>So what does the markup look like?  How much work do YOU need to do?</h3>
+					<hr />
+					<h4>HTML</h4>
+					<code>
+						&lt;div class="drawer" id="drawer2"&gt;<br />
+						&nbsp;&nbsp;&lt;div class="drawerContent"&gt;&lt;/div&gt;<br />
+						&lt;/div&gt;
+					</code>
+					<hr />
+					<h4>JavaScript</h4>
+					<code>
+							j.drawer({
+								'id': 'drawer2',
+								'header': 'Markup'
+							});
+					</code>
+					<hr />
+					<p>
+						See how easy this is?  
+				</div>
+			</div>			
+		</div>
+		<div class="container" style="margin-top: 2em;">
+			<h2>Tables!</h2>
+			<table id="dataTable"></table>
+		</div>
+		<div class="container" style="margin-top: 2em;">
+			<h2>Menus</h2>
+			<p>
+				<ul class="cssMenu">
+					<li><a href="forms.html">Forms</a></li>
+					<li><a href="tables.html">Tables</a></li>
+					<li><a href="dialogs.html">Dialogs</a></li>
+					<li><a href="drawers.html">Drawers</a></li>
+					<li>
+						<a href="#">Coming Soon</a>
+						<ul>
+							<li><a href="#">Selectors</a></li>
+							<li><a href="#">Other Methods</a></li>
+							<li><a href="#">Contact page</a></li>
+						</ul>
+					</li>
+				</ul>
+			</p>
+		</div>		
+		<footer class="footer">
+			Want to help contribute?  Just drop me a line!  <a href="mailto:endoflineprod@gmail.com">Endoflineprod@gmail.com</a>
+		</footer>	
+	</body>
+</html>
