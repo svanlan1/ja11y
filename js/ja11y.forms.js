@@ -10,7 +10,7 @@ j.form = function (f) {
 				type = ele[i].type;
 
 			//Set Checkbox Groups
-			if(i == 'group') {
+			if(i == 'group' || ele[i] == 'group') {
 				var fieldset = document.createElement('fieldset'),
 					legend = document.createElement('legend'),
 					legendText = document.createTextNode(ele[i].legend),
@@ -68,8 +68,8 @@ j.form = function (f) {
 				form.appendChild(curEl);
 			} else {
 				//Set current form field attributes
-				curEl.setAttribute('id', i);
-				curEl.setAttribute('name', i);
+				curEl.setAttribute('id', ele[i].id);
+				curEl.setAttribute('name', ele[i].id);
 
 				if(ele[i].class) {
 					curEl.setAttribute('class', ele[i].class);
